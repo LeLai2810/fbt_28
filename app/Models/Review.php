@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Review extends Model
+{
+    protected $fillable [
+        'user_id',
+        'tour_id',
+        'content',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+
+    public function tour()
+    {
+        return $this->belongsTo('App\Models\Tour');
+    }
+
+    public function likes()
+    {
+        return $this->hasMany('App\Models\Like');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
+}
