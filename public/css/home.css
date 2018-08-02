@@ -1,0 +1,79 @@
+.top-header {
+    height: 50px;
+}
+.col-md-6.social {
+    padding: 15px;
+}
+.search-tour.col-md-6 {
+    padding: 7px;
+}
+#Search-box {
+    width: 50%;
+    float: right;
+    border-radius: 0;
+}
+.header {
+    background-color: #F48B15;
+}
+.navbar-laravel .container-fluid {
+    padding-left: 0px;
+}
+.navbar-laravel .navbar-header {
+    padding-left: 15px;
+    width: 70px;
+    background-color: #954500;
+}
+.icon-home {
+    padding-left: 10px;
+}
+.nav-link {
+    color: #fff;
+    font-size: 20px;
+}
+.navbar-laravel .nav > li > a:focus,.navbar-laravel .nav > li > a:hover {
+    background-color: #954500;
+    color: #fff;
+}
+.slideshow {
+    position: relative;
+}
+.slideshow .fa-arrow-left {
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+.slideshow .fa-arrow-right {
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+.mySlides.slick-slide img{
+    width: 410px;
+}
+.footer {
+    background-color: #FFEDD5;
+}
+.footer-copy {
+    background-color: #F48B15;
+    clear: both;
+    padding: 15px 55px;
+    color: #fff;
+}
+.footer .col-md-12 {
+    padding-top: 20px;
+    color: #B66208;
+}
+.footer li {
+    list-style: none;
+    line-height: 25px;
+}
+.footer li a{
+    color: #B66208;
+}
+.footer h4{
+    padding-left: 40px;
+}
+.tour-list.container {
+    clear: both;
+    padding: 40px 0;
+}
