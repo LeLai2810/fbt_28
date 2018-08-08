@@ -34,6 +34,10 @@
     background-color: #954500;
     color: #fff;
 }
+/*main css*/
+.main{
+    min-height: calc(75vh);
+}
 .slideshow {
     position: relative;
 }
@@ -50,6 +54,17 @@
 .mySlides.slick-slide img{
     width: 410px;
 }
+.checkbox {
+    margin-left: 17px;
+}
+.navbar-log .dropdown-item {
+    display: inline-block;
+    width: 100%;
+    padding-left: 15px;
+    line-height: 25px;
+    font-size: 20px;
+}
+/*footer css*/
 .footer {
     background-color: #FFEDD5;
 }
@@ -77,3 +92,4 @@
     clear: both;
     padding: 40px 0;
 }
+
