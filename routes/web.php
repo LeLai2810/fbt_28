@@ -12,3 +12,7 @@
 */
 
 Route::get('/', 'TourController@index')->name('home');
+
+Auth::routes();
+
+

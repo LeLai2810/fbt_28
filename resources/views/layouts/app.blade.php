@@ -29,7 +29,7 @@
             <nav class="navbar navbar-laravel">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="#">{!! Html::image('images/ico-home.png', 'Image', ['class' => 'icon-home']) !!}</a>
+                        <a class="navbar-brand" href="{{ route('home') }}">{!! Html::image('images/ico-home.png', 'Image', ['class' => 'icon-home']) !!}</a>
                     </div>
                     <ul class="nav navbar-nav mr-auto">
                         <li class="nav-item"><a href="" class="nav-link">{{ trans('message.domestic') }}</a></li>
@@ -37,13 +37,37 @@
                         <li class="nav-item"><a href="#" class="nav-link">{{trans('message.about') }}</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">{{ trans('message.contact') }}</a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item">
-                            <a class="nav-link" href="">{{ trans('message.login') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">{{ trans('message.signup') }}</a>
-                        </li>
+                    <ul class="nav navbar-nav navbar-right navbar-log">
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ trans('message.login') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ trans('message.register') }}</a>
+                            </li>
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="">
+                                        {{ trans('message.profile') }}
+                                    </a>
+                                    <a class="dropdown-item" href="">
+                                        {{ trans('message.mytour') }}
+                                    </a>
+                                    <a class="dropdown-item" href="">
+                                        {{ trans('message.myreview') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}" id="logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        {{ trans('message.logout') }}
+                                    </a>
+                                    {!! Form::open(['route' => 'logout', 'id' => 'logout-form']) !!}
+                                    {!! Form::close() !!}
+                                </div>
+                            </li>
+                        @endguest
                     </ul>
                 </div>
             </nav> 
@@ -52,6 +76,7 @@
         <div class="main">
             @yield('content')
         </div>
+        @include('layouts.footer')
         
     </div>
     {{ Html::script('js/jquery.min.js') }}
