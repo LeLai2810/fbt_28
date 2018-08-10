@@ -13,6 +13,12 @@
 
 Route::get('/', 'TourController@index')->name('home');
 
+Route::resource('tour', 'TourController')->only('show', 'index');
+
 Auth::routes();
+
+Route::get('/login/{social}', 'Auth\LoginController@redirectToProvider')->name('social-login');
+
+Route::get('/callback/{social}', 'Auth\LoginController@handleProviderCallback');
 
 

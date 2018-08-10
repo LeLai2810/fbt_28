@@ -27,7 +27,7 @@
                                     <tbody>
                                         <tr>
                                             <td>{{ $tour->id }}</td>
-                                            <td>{{ $tour->name }}<br>{{ $tour->itinerary }}</td>
+                                            <td><a href="{{ route('tour.show', ['id' => $tour->id]) }}">{{ $tour->name }}</a><br>{{ $tour->itinerary }}</td>
                                             <td>{{ $tour->duration }}</td>
                                             <td>{{ $tour->start_date }}</td>
                                             <td>{{ $tour->price }}</td>
@@ -38,6 +38,9 @@
                         </div>
                         <div id="MBtour" class="tab-pane fade">
                         </div>
+                    </div>
+                    <div class="row text-right">
+                        {{ $tours->links() }}
                     </div>
                 </div>
             </div>

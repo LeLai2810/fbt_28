@@ -9,6 +9,7 @@ class Activity extends Model
     protected $fillable = [
         'tour_id',
         'content',
+        'image',
     ];
 
     public function tour()

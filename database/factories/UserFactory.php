@@ -32,6 +32,7 @@ $factory->define(App\Models\Activity::class, function (Faker $faker) {
     return [
         'tour_id' => App\Models\Tour::all()->random()->id,
         'content' => $faker->paragraph,
+        'image' => $faker->image('public/images'),
     ];
 });
 
@@ -46,7 +47,7 @@ $factory->define(App\Models\Booking::class, function (Faker $faker) {
 $factory->define(App\Models\Category::class, function (Faker $faker) {
     return [
         'tour_id' => App\Models\Tour::all()->random()->id,
-        'name' => $faker->title,
+        'name' => $faker->name,
     ];
 });
 
@@ -91,12 +92,13 @@ $factory->define(App\Models\SocialAccount::class, function (Faker $faker) {
             'google',
             'twitter',
         ]),
+        'provider_id' => str_random(10),
     ];
 });
 
 $factory->define(App\Models\Tour::class, function (Faker $faker) {
     return [
-        'name' => $faker->title,
+        'name' => $faker->name,
         'duration' => $faker->numberBetween(0, 10),
         'itinerary' => $faker->country,
         'start_date' => $faker->date(),

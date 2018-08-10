@@ -37,4 +37,9 @@ return [
     'confirm_password' => 'Confirm Password',
     'reset_password' => 'Reset Password',
     'reset_link' => 'Reset Link',
+    'or' => 'or',
+    'login_with' => 'Login with',
+    'activity' => 'Activity',
+    'booking' => 'Booking',
+    'review' => 'Review',
 ];

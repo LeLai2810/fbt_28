@@ -46,6 +46,22 @@
                                 </div>
                             </div>
                         {!! Form::close() !!}
+                        <div class="social text-center">
+                            <div class="line-center text-center">{{ trans('message.or') }}</div>
+                        </div>
+                        <div class="login-social">
+                            {!! Form::open(['route' => ['social-login', 'facebook'], 'method' => 'get']) !!}
+                            {!! Form::button('<i class="fa fa-facebook"></i>  ' . trans('message.login_with') . ' Facebook', ['type' => 'submit', 'class' => 'btn btn-social facebook']) !!}
+                            {!! Form::close() !!}
+
+                            {!! Form::open(['route' => ['social-login', 'twitter'], 'method' => 'get']) !!}
+                            {!! Form::button('<i class="fa fa-twitter"></i>  ' . trans('message.login_with') . ' Twitter', ['type' => 'submit', 'class' => 'btn btn-social tw']) !!}
+                            {!! Form::close() !!}
+
+                            {!! Form::open(['route' => ['social-login', 'google'], 'method' => 'get']) !!}
+                            {!! Form::button('<i class="fa fa-google"></i>  ' . trans('message.login_with') . ' Google', ['type' => 'submit', 'class' => 'btn btn-social google']) !!}
+                            {!! Form::close() !!}
+                        </div>
                     </div>
                 </div>
             </div>

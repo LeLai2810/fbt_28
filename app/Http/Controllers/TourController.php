@@ -7,11 +7,17 @@ use App\Models\Tour;
 
 class TourController extends Controller
 {
-	
     public function index()
     {
-        $tours = Tour::orderBy('created_at')->get();
+        $tours = Tour::paginate(6);
         
         return view('home', compact('tours'));
+    }
+
+    public function show(Tour $tour)
+    {
+        $activities = $tour->activities;
+
+        return view('tours.show', compact('tour', 'activities'));
     }
 }
